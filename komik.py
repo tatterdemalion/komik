@@ -35,6 +35,7 @@ class MainWindow(QtGui.QMainWindow):
         #self.ui.actionZoom_In.triggered.connect(self.zoomIn)
         #self.ui.actionZoom_Out.triggered.connect(self.zoomOut)
         #self.ui.actionFit_to_Window.triggered.connect(self.fitToWindow)
+        self.ui.actionFull_Screen.triggered.connect(self.fullScreen)
         self.ui.pagesList.currentItemChanged.connect(self.displayPage)
 
         self.openComicFile()
@@ -83,6 +84,13 @@ class MainWindow(QtGui.QMainWindow):
         self.scaleFactor = 1.0
         self.ui.pageView.adjustSize()
 
+    def fullScreen(self):
+        if self.isFullScreen():
+            self.showNormal()
+            self.ui.actionFull_Screen.setText('Full Screen')
+        else:
+            self.showFullScreen()
+            self.ui.actionFull_Screen.setText('Exit Full Screen')
 
 if __name__ == "__main__":
     app = QtGui.QApplication(sys.argv)

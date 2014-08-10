@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'mainwindow.ui'
 #
-# Created: Sun Aug 10 10:23:24 2014
+# Created: Sun Aug 10 18:48:04 2014
 #      by: pyside-uic 0.2.15 running on PySide 1.2.2
 #
 # WARNING! All changes made in this file will be lost!
@@ -20,6 +20,10 @@ class Ui_MainWindow(object):
         self.horizontalLayout_2.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
         self.scrollArea = QtGui.QScrollArea(self.centralwidget)
+        self.scrollArea.setFrameShadow(QtGui.QFrame.Plain)
+        self.scrollArea.setLineWidth(0)
+        self.scrollArea.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
+        self.scrollArea.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
         self.scrollArea.setWidgetResizable(True)
         self.scrollArea.setObjectName("scrollArea")
         self.scrollAreaWidgetContents = QtGui.QWidget()
@@ -54,8 +58,8 @@ class Ui_MainWindow(object):
         self.actionQuit.setObjectName("actionQuit")
         self.actionHello = QtGui.QAction(MainWindow)
         self.actionHello.setObjectName("actionHello")
-        self.actionFullscreen = QtGui.QAction(MainWindow)
-        self.actionFullscreen.setObjectName("actionFullscreen")
+        self.actionFull_Screen = QtGui.QAction(MainWindow)
+        self.actionFull_Screen.setObjectName("actionFull_Screen")
         self.actionZoom_In = QtGui.QAction(MainWindow)
         self.actionZoom_In.setObjectName("actionZoom_In")
         self.actionZoom_Out = QtGui.QAction(MainWindow)
@@ -64,7 +68,7 @@ class Ui_MainWindow(object):
         self.actionFit_to_Window.setObjectName("actionFit_to_Window")
         self.menuFile.addAction(self.actionOpen)
         self.menuFile.addSeparator()
-        self.menuView.addAction(self.actionFullscreen)
+        self.menuView.addAction(self.actionFull_Screen)
         self.menuView.addAction(self.actionZoom_In)
         self.menuView.addAction(self.actionZoom_Out)
         self.menuView.addAction(self.actionFit_to_Window)
@@ -72,7 +76,6 @@ class Ui_MainWindow(object):
         self.menubar.addAction(self.menuView.menuAction())
 
         self.retranslateUi(MainWindow)
-        QtCore.QObject.connect(self.actionFullscreen, QtCore.SIGNAL("triggered()"), MainWindow.showFullScreen)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
@@ -82,7 +85,7 @@ class Ui_MainWindow(object):
         self.actionOpen.setText(QtGui.QApplication.translate("MainWindow", "Open", None, QtGui.QApplication.UnicodeUTF8))
         self.actionQuit.setText(QtGui.QApplication.translate("MainWindow", "Quit", None, QtGui.QApplication.UnicodeUTF8))
         self.actionHello.setText(QtGui.QApplication.translate("MainWindow", "hello", None, QtGui.QApplication.UnicodeUTF8))
-        self.actionFullscreen.setText(QtGui.QApplication.translate("MainWindow", "Full Screen", None, QtGui.QApplication.UnicodeUTF8))
+        self.actionFull_Screen.setText(QtGui.QApplication.translate("MainWindow", "Full Screen", None, QtGui.QApplication.UnicodeUTF8))
         self.actionZoom_In.setText(QtGui.QApplication.translate("MainWindow", "Zoom In", None, QtGui.QApplication.UnicodeUTF8))
         self.actionZoom_Out.setText(QtGui.QApplication.translate("MainWindow", "Zoom Out", None, QtGui.QApplication.UnicodeUTF8))
         self.actionFit_to_Window.setText(QtGui.QApplication.translate("MainWindow", "Fit to Window", None, QtGui.QApplication.UnicodeUTF8))
